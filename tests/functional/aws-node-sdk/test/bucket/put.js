@@ -85,7 +85,7 @@ describe('PUT Bucket - AWS.S3.createBucket', () => {
             });
         });
 
-        describe('bucket naming restriction', () => {
+        describe.only('bucket naming restriction', () => {
             let testFn;
 
             before(() => {
@@ -101,6 +101,7 @@ describe('PUT Bucket - AWS.S3.createBucket', () => {
                             return done(e);
                         })
                         .catch(error => {
+                            console.log(JSON.stringify(error));
                             assert.strictEqual(error.code, expectedCode);
                             assert.strictEqual(error.statusCode,
                                 expectedStatus);
