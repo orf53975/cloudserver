@@ -13,7 +13,7 @@ const itSkipIfE2E = process.env.S3_END_TO_END ? it.skip : it;
 
 const locationConstraints = configOfficial.locationConstraints;
 
-describe('PUT Bucket - AWS.S3.createBucket', () => {
+describe.only('PUT Bucket - AWS.S3.createBucket', () => {
     describe('When user is unauthorized', () => {
         let s3;
         let config;
@@ -85,7 +85,7 @@ describe('PUT Bucket - AWS.S3.createBucket', () => {
             });
         });
 
-        describe.only('bucket naming restriction', () => {
+        describe('bucket naming restriction', () => {
             let testFn;
 
             before(() => {
