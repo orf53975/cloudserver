@@ -101,7 +101,7 @@ describe.only('PUT Bucket - AWS.S3.createBucket', () => {
                             return done(e);
                         })
                         .catch(error => {
-                            console.log(JSON.stringify(error));
+                            console.log(error);
                             assert.strictEqual(error.code, expectedCode);
                             assert.strictEqual(error.statusCode,
                                 expectedStatus);
