@@ -7,9 +7,9 @@ WORKDIR /usr/src/app
 COPY ./package.json .
 
 RUN apt-get update \
-    && apt-get install -y jq python git build-essential --no-install-recommends \
-    && npm install --production \
-    && apt-get autoremove --purge -y python git build-essential \
+    && apt-get install -y jq python git build-essential libssl-dev --no-install-recommends \
+    && npm install --production --unsafe-perm \
+    && apt-get autoremove --purge -y python git build-essential libssl-dev \
     && rm -rf /var/lib/apt/lists/* \
     && npm cache clear \
     && rm -rf ~/.node-gyp \
